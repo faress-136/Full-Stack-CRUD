@@ -42,7 +42,9 @@ function addProduct(){
     axios.post('http://localhost:3006/products', data)
     .then(res => {
         getData()
+        clearForm()
 })
+
 }
 
 function deleteProduct(productId){
@@ -126,24 +128,24 @@ useEffect(()=>{
 return (
 <>
 <div>
-    <h1 className='text-center mx-auto'>Full Stack CRUD Application</h1>
+    <h1 className='text-center mx-auto mt-4'>Full Stack CRUD Application</h1>
 </div>
 
 
 <div className="w-50 mx-auto my-4">
     <div className="form-group">
-        <label htmlFor="productName" className="py-1">Product Name</label>
+        <label htmlFor="productName" className="py-1 fs-5 fw-bold">Product Name</label>
         <input type="text" ref={name} onChange={(e)=>{getUserData(e)}} id="productName" name='productName' className="form-control"/>
 
-        <label htmlFor="productPrice" className="py-1">Product Price</label>
+        <label htmlFor="productPrice" className="py-1 fs-5 fw-bold">Product Price</label>
         <input type="number" ref={price} onChange={(e)=>{getUserData(e)}} id="productPrice" name='productPrice' className="form-control"/>
 
 
-        <label htmlFor="productCat" className="py-1">Product Category</label>
+        <label htmlFor="productCat" className="py-1 fs-5 fw-bold">Product Category</label>
         <input type="text" ref={catg} onChange={(e)=>{getUserData(e)}} id="productCategory" name='productCategory' className="form-control"/>
 
 
-        <label htmlFor="productDesc" className="py-1">Product Description</label>
+        <label htmlFor="productDesc" className="py-1 fs-5 fw-bold ">Product Description</label>
         <input type="text" ref={desc} onChange={(e)=>{getUserData(e)}} id="productDescription" name='productDescription' className="form-control"/>
 
 
@@ -164,9 +166,9 @@ return (
 <div className="w-50 mx-auto">
 <table className="table">
     <thead>
-        <tr>
+        <tr className='fs-5'>
             {/* <th>index</th> */}
-            <th>product Name</th> 
+            <th>Product Name</th> 
             <th>Price</th> 
             <th>Category</th> 
             <th>Description</th> 
